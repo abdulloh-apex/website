@@ -273,6 +273,26 @@ img { display: block; }
    outwards (the screen pass in js/hero3d.js). The preloader only lets go of its own. */
 .preloader.is-dissolve.is-done { background: transparent; opacity: 1; transition: visibility 0s linear 400ms; }
 
+/* ---- Credit ----
+   "Made by" in the small capitals of the labels, the name in the display face, in the muted gold of the frame.
+   Shown under the dates in the preloader, and under "Watch again" at the end, like the credits of a film. */
+.credit { margin: 0; display: flex; align-items: baseline; justify-content: center; gap: calc(var(--u) * 10); white-space: nowrap; pointer-events: none; }
+.credit__by { color: var(--paper-50); letter-spacing: -0.02em; }
+.credit__name { font-size: calc(var(--u) * 18); line-height: 0.9; letter-spacing: -0.01em; color: #cfb27a; }
+.preloader__credit { position: absolute; left: 50%; top: calc(var(--pad) + var(--u) * 22); transform: translateX(-50%); transition: opacity 500ms var(--ease); }
+.preloader.is-done .preloader__credit { opacity: 0; transition: opacity 200ms linear; }
+.credit--end {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(var(--u) * 58));
+  opacity: 0; visibility: hidden; transition: opacity var(--fade) var(--ease), visibility 0s linear var(--fade);
+  /* it stands over the painting: set on a small dark plate with a gilt hairline, like a museum label */
+  padding: calc(var(--u) * 10) calc(var(--u) * 16) calc(var(--u) * 9);
+  background: rgba(15, 11, 8, 0.66); border: 1px solid rgba(207, 178, 122, 0.32);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.credit--end .credit__by { color: var(--paper-60); }
+.credit--end .credit__name { font-weight: 500; }
+.btn-frame--center.is-on + .credit--end { opacity: 1; visibility: visible; transition: opacity 900ms var(--ease) 300ms, visibility 0s; }
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   :root { --fade: 1ms; }

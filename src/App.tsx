@@ -7,6 +7,7 @@ export default function App() {
       {/* Preloader */}
       <div className="preloader" id="preloader" role="status" aria-live="polite">
         <p className="preloader__top caps">Thomas Cole, 1833–1836</p>
+        <p className="credit preloader__credit"><span className="credit__by caps">Made by</span><span className="credit__name display">Abdulloh Dovlatboev</span></p>
         <div className="preloader__frame" id="preFrame">
           <p className="preloader__title display">The Course<br />of Empire</p>
         </div>
@@ -50,6 +51,8 @@ export default function App() {
         <div className="centers" id="centers"></div>
 
         <button className="btn-frame btn-frame--center display" id="againBtn" type="button">Watch again</button>
+        {/* The credit, shown with "Watch again" at the end (css/style.css: Credit) */}
+        <p className="credit credit--end"><span className="credit__by caps">Made by</span><span className="credit__name display">Abdulloh Dovlatboev</span></p>
 
         {/* Chapter rail (bottom left) */}
         <nav className="rail" id="rail" aria-label="Chapters">
